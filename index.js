@@ -27,7 +27,6 @@ app.use(cors(corsOptions));
 // create user account
 app.post('/account/create', async(req, res) => {
     const { name, email, password} = req.body;
-    console.log(req.body);
     try {
         const firebaseUser = await firebase.auth().createUser({
             email,
@@ -35,9 +34,7 @@ app.post('/account/create', async(req, res) => {
             password,
             disabled: false
         })
-        console.log('firebaseUser', firebaseUser)
         const dbUser = await User.create({name, email, firebaseId: firebaseUser.uid, balance: 0})
-        console.log('dbUser', dbUser)
     } catch (error) {
         console.log(error)
     }
@@ -71,7 +68,6 @@ app.get('/account', function (req, res) {
 
 app.put('/account/update', async (req, res) => {
     const { _id, amount } = req.body;
-    console.log(req.body);
     try {
         const user = await User.findOne({ _id })
         if (user) {

@@ -18,7 +18,12 @@ MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
 
     // insert into customer table
     var collection = db.collection('users');
-    var doc = {username, email, firebaseId, balance};
+    var doc = {
+        name,
+        email,
+        firebaseId,
+        balance
+    };
     collection.insertOne(doc, {w:1}, function(err, result) {
         console.log('Document insert');
     });
@@ -27,8 +32,6 @@ MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client) {
         .collection('users')
         .find()
         .toArray(function(err, docs) {
-            console.log('Collection:',docs);
-
             // clean up
             client.close();            
     });    
