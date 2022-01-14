@@ -14,8 +14,8 @@ const decodeToken = require('./middlewares/authFB');
 mongoose
     .connect(process.env.DB_URL,
         { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((x) => console.log(`Connected to MongoDB, database: ${x.connections[0].name}`))
-    .catch(err => console.error('Could not connect to MongoDB', err));
+    .then((x) => console.log(`Connected to database`))
+    .catch(err => console.error('Could not connect to database', err));
 
 // middlewares
 // used to serve static files from public directory
