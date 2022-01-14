@@ -158,3 +158,4 @@ dist
 .ionide
 
 # Support for Project snippet scope
+serviceAccount.js
