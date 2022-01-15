@@ -5,9 +5,9 @@ const cors    = require('cors');
 const User = require('./models/User')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const firebase = require('./config/firebase.js');
+const firebase = require('./config-firebase/firebase.js');
 const corsOptions = {
-    origin: process.env.CLIENT_URL || 'http://localhost:3001',
+    origin: process.env.CLIENT_URL ,
 }
 const decodeToken = require('./middlewares/authFB');
 // connect to mongo database

@@ -1,4 +1,4 @@
-const firebase = require('../config/firebase')
+const firebase = require('../config-firebase/firebase')
 
 module.exports = async (req, res, next) => {
   if (!req.headers.authorization) {
