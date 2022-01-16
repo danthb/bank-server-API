@@ -159,3 +159,4 @@ dist
 
 # Support for Project snippet scope
 serviceAccount.js
+config/*
