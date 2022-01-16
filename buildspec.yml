@@ -8,12 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Installing source NPM dependencies.
-      - npm install -g json
-      - sudo apt update             # Install the latest system updates.
-      - sudo apt install -y awscli
-      - aws --version             
-      - chmod +x ./build_scripts/create_configuration.sh
-      - sh ./build_scripts/create_configuration.sh
+      - npm install -g json         
       - npm install
       - aws --version
   build:
