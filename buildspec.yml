@@ -10,6 +10,8 @@ phases:
       - echo Installing source NPM dependencies.
       - npm install -g json         
       - npm install
+      - chmod +x ./build_scripts/create_configuration.sh
+      - sh ./build_scripts/create_configuration.sh
       - aws --version
   build:
     commands:
